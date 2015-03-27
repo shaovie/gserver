@@ -1,0 +1,27 @@
+{
+  "platform": "PLATFORM",
+  "cfg_root": "../config",
+  "group": "test",
+  "sn": SN,
+  "max_online": 1500,
+  "cross": {
+    "port": CROSS_PORT,
+    "host": "CROSS_HOST"
+  },
+  "db": {  
+    "port": DB_PORT,
+    "host": "DB_HOST",
+    "user": "DB_USER",
+    "passwd": "DB_PASSWD",
+    "db_name": "DB_NAME"
+  },
+  "db_proxy": {
+    "port": DB_PROXY_PORT,
+    "host": "DB_PROXY_HOST"
+  },
+  "world": {
+    "port": WORLD_PORT,
+    "gm_port": WORLD_GM_PORT,
+    "gm_host": "WORLD_GM_HOST"
+  }
+}

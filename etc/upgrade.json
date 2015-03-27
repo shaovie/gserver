@@ -1,0 +1,14 @@
+{
+  "for": ["rc"],
+  "svc": [1,7,10,12,13],
+  "ops": ["upgrade_bin", "stop", "start", "backup"],
+  "package": "yytx-qq-46634-2013-12-18-08-01-51.tar.gz",
+
+  "all": { 
+    "for": ["rc"],
+    "svc": [1,2,3],
+    "ops": ["gm", "upgrade_bin", "upgrade_db", "stop", "start", "backup"],
+    "gm_ctrl": "cfg_update?f=box.json,drop.json",
+    "package": "yytx-qq-42208-2013-10-22-08-24-18.tar.gz"
+  }
+}

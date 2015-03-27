@@ -1,0 +1,3 @@
+press `CTRL + C` or `kill -2 pid` will print the result to file './log'.
+
+press `CTRL + \` or `kill -3 pid` will print the result to file './log' and exit the program.

@@ -1,0 +1,13 @@
+1.  函数命名规范参数 src/player/player_obj.h: do_xxx, to_xxx, on_xxx, clt_xxx, aev_xxx ...
+2.  全局性的数值可以配在global_param_cfg中，比如发邮件的邮资
+3.  只在一个cpp用到的常量或宏，没必要写到global_macros.h中！
+4.  消耗钱之前，一定要先判断余额是否够！
+5.  scene_coord_t item_amount_bind_t 这2个结构体可用于 保存配置文件中常用的三参数结构
+6.  handle_db_*类的方法，不要轻易返回-1，这个-1是返回给db_proxy链接的
+7.  凡是乘法运算都小心结果溢出
+8.  客户端传过来的数值必须检查是否异常 (< 0 || > 上限)，尤其是允许用户自己输入的地方
+NOTE:
+    1. VIP 附加数值，不要在各模块中单独推送给前端
+    2. 各副本的逻辑不要加在scp_module中，尽量放在各xxx_scp中，加静态方法，scp_module中
+       添加全局性的
+    3. errno 预留的区间不要太大，目前预留的太多了，容易被用完

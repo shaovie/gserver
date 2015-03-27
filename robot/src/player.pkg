@@ -1,0 +1,65 @@
+$#include "snap_obj.h"
+$#include "player.h"
+$#include "time_util.h"
+
+class time_util
+{
+  static int now;
+};
+
+class client
+{
+public:
+  int send_request(const int msg_id, out_stream *os);
+  int send_respond(const int msg_id, const int res, out_stream *os = NULL);
+  int send_respond_ok(const int msg_id, out_stream *os = NULL);
+  int send_respond_err(const int msg_id, const int res);
+  int send_msg(const int msg_id, const int res, out_stream *);
+};
+
+class snap_obj
+{
+  snap_obj();
+
+  char dir_;
+  short coord_x_;
+  short coord_y_;
+
+  int obj_id_;
+  int obj_clsid_;
+
+  int scene_id_;
+  int scene_clsid_;
+};
+
+class snap_obj_mgr
+{
+  snap_obj_mgr();
+  void insert(const int obj_id, snap_obj *so);
+  snap_obj *find(const int obj_id);
+};
+
+class player : public client
+{
+  player(const char *ac, const char *name);
+  ~player();
+
+  int lua_schedule_timer();
+
+  char career_;
+  char dir_;
+  short x_;
+  short y_;
+  short lvl_;
+	int char_id_;
+  int scene_cid_;
+  int last_heart_beat_time_;
+  int64_t exp_;
+
+  char name_[32];
+	char account_[32];
+
+  snap_obj_mgr *player_snap_;
+  snap_obj_mgr *monster_snap_;
+};
+

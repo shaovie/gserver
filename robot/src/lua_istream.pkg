@@ -1,0 +1,36 @@
+$#include "lua_istream.h"
+
+class in_stream
+{
+  in_stream(char *bf, const unsigned int len);
+  unsigned int length();
+};
+
+class lua_in_stream
+{
+public:
+  static char read_char(in_stream &is);
+  static short read_short(in_stream &is);
+  static int read_int(in_stream &is);
+  static double read_double(in_stream &is);
+  static int64_t read_int64_t(in_stream &is);
+  static char *read_string(in_stream &is, const int len);
+};
+
+class out_stream
+{
+  ~out_stream();
+};
+
+class lua_out_stream
+{
+public:
+  static out_stream new_out_stream();
+  static void write_char(out_stream &os, const char value);
+  static void write_short(out_stream &os, const short value);
+  static void write_int(out_stream &os, const int value);
+  static void write_double(out_stream &os, const double value);
+  static void write_int64_t(out_stream &os, const int64_t value);
+  static void write_string(out_stream &os, const char *bf);
+};
+

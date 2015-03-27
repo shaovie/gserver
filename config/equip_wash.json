@@ -1,0 +1,16 @@
+﻿{
+"4":{
+"item_cid":22210005,
+"item_cnt":1,
+"cost":1000,
+"min_num":2,
+"max_num":5
+},
+"5":{
+"item_cid":22210005,
+"item_cnt":2,
+"cost":2000,
+"min_num":3,
+"max_num":6
+}
+}

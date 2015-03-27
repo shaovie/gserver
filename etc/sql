@@ -1,0 +1,3 @@
+#查找表中多余的重复记录，重复记录是根据单个字段（peopleId）来判断
+select * from account_info group by account having count(account) > 1;
+
